@@ -16,11 +16,11 @@ function divide(x, y) {
 }
 
 function power(x, y) {
-  return x ^ y
+  return x ** y
 }
 
 function mod(x, y) {
-  x % y
+  return x % y
 }
 
 function squareRoot(x) {
@@ -50,19 +50,19 @@ function calculate(expression) {
   }
 
   if (operator === '+') {
-    return num1 + num2
+    return add(num1, num2)
   } else if (operator === '-') {
-    return num1 - num2
+    return subtract(num1, num2)
   } else if (operator === '*') {
-    return num1 * num2
+    return multiply(num1, num2)
   } else if (operator === '^') {
-    return num1 ** num2
+    return power(num1, num2)
   } else if (operator === '%') {
-    return num1 % num2
+    return mod(num1, num2)
   } else if (operator === '/') {
-    return num1 / num2
+    return divide(num1, num2)
   } else if (operator === 'sqrt') {
-    return Math.sqrt(num1)
+    return squareRoot(num1)
   }
 }
 
