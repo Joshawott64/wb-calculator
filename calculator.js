@@ -27,6 +27,27 @@ function squareRoot(x) {
   return Math.sqrt(x)
 }
 
+function factorial(x) {
+  let factorialArray = []
+
+  // alert user if negative or decimal is entered
+  if (x < 0 || x % 1 > 0) {
+    return alert("Sorry, mate! Negatives and decimals aren't allowed here.")
+  }
+
+  for (let i = x; i > 0; i--) {
+    factorialArray.push(i)
+  }
+
+  x = 1
+
+  for (let i = 0; i < factorialArray.length; i++) {
+    x *= factorialArray[i]
+  }
+
+  return x
+}
+
 function calculate(expression) {
   expression = expression.split(' ')
 
@@ -34,6 +55,7 @@ function calculate(expression) {
   let operator
   let num2
 
+  // assign variable values based on array length
   if (expression.length === 3) {
     num1 = Number(expression[0])
     operator = expression[1]
@@ -45,10 +67,12 @@ function calculate(expression) {
     return alert("Too many / Too Few Inputs")
   }
 
+  // alert user if strings are entered where numbers should be
   if (Number.isNaN(num1) || Number.isNaN(num2)) {
     return alert("That's not a number, sillypants!")
   }
 
+  // determine proper mathematical 
   if (operator === '+') {
     return add(num1, num2)
   } else if (operator === '-') {
@@ -63,6 +87,8 @@ function calculate(expression) {
     return divide(num1, num2)
   } else if (operator === 'sqrt') {
     return squareRoot(num1)
+  } else if (operator === '!') {
+    return factorial(num1)
   }
 }
 
